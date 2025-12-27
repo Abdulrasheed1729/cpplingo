@@ -4,20 +4,20 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // constexpr are evaluated at compile time. Fix it the syntax
-constexpr void is_even(int num) {
+constexpr bool is_even(int num) {
     return num % 2 == 0;
 }
 
 // This is a lambda function. It's definition is broken, fix it
-auto sale_price = []() -> int {
+auto sale_price = [](int price) -> int {
     if (is_even(price))
         return price - 10;
-    else 
+    else
         return price - 3;
-    
+
 };
 
 int function_syntax() {

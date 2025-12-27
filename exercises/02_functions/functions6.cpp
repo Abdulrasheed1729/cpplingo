@@ -5,7 +5,7 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile and pass!
 
@@ -37,8 +37,8 @@ int my_function() {
 
     int value = called(10);
     std::cout << "Returned out of function called() : value=" << value << "\n";
-    
-    return value +  + ; // Fix: must return the sum of global scope and output of called() and value of namespace my_namespace_0
+
+    return value + ::value + my_namespace_0::value; // Fix: must return the sum of global scope and output of called() and value of namespace my_namespace_0
 }
 
 #include <catch2/catch.hpp>

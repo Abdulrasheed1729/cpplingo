@@ -4,13 +4,13 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 bool is_even(int num) {
     return num % 2 == 0;
 }
 
-void sale_price(int price){
+int sale_price(int price){
     if (is_even(price)) {
         return price - 10;
     }
