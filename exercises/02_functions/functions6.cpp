@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 // functions6.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
