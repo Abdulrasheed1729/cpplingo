@@ -6,7 +6,7 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile and pass the test! Here a set is used to avoid creating more resources when the same name is used
 
@@ -20,11 +20,11 @@ public:
         return resources.size();
     };
     ExpensiveResource(std::string n = "") : name(n) {
-        resources. ...;   // Fix: perform an operation on resources
+        resources.insert(name);   // Fix: perform an operation on resources
         std::cout << "Opening Ressource " << n << ", new count is:"<< resources.size() << "\n";
     }
     ~ExpensiveResource() {
-        resources. ...;   // Fix: perform an operation on resources
+        resources.erase(name);   // Fix: perform an operation on resources
         std::cout << "Closing Ressource " << name << ", new count is:" << resources.size() << "\n";
     }
 };
@@ -35,7 +35,7 @@ private:
     ExpensiveResource * resource;
 
 public:
-    Holder(std::string n = "") { 
+    Holder(std::string n = "") {
         resource = new ExpensiveResource(n);
     }
     ~Holder() { // TODO: Delete the destructor

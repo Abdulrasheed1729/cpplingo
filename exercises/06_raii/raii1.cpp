@@ -5,7 +5,7 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile and pass the test!
 
@@ -34,11 +34,13 @@ private:
     ExpensiveResource * resource;
 
 public:
-    Holder(std::string n = "") { 
+    Holder(std::string n = "") {
         resource = new ExpensiveResource(n);
     }
     // Fix: I need a destructor that releases the resource
-    ~
+    ~Holder() {
+        delete resource;
+    }
 };
 
 
