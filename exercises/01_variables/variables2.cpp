@@ -1,4 +1,3 @@
-#include <iostream>
 
 // variables2.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
@@ -10,7 +9,6 @@ int type_function(int input) {
   int x = input;
   return x;
 }
-
 
 #include <catch2/catch.hpp>
 
