@@ -4,7 +4,7 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile!
 // Write the Circle constructor
@@ -14,11 +14,11 @@ struct Point {
     double y;
 
     bool operator==(const Point& p) const{
-        return std::abs(x - p.x) < 1e-6 && std::abs(y - ) < ;
+        return std::abs(x - p.x) < 1e-6 && std::abs(y - p.y) < 1e-6;
     }
 };
 
-constexpr Point point_zero = ; 
+constexpr Point point_zero = {0.0, 0.0};
 
 class Shape {
 public:
@@ -48,7 +48,7 @@ public:
     }
 
     double area() const {
-        return 0.0;
+        return pi * radius_ * radius_;
     }
 };
 
@@ -77,4 +77,3 @@ TEST_CASE("test_two") {
     REQUIRE(circle.center() == point_in);
     REQUIRE(circle.area() == Circle::pi * radius * radius);
 }
-

@@ -4,7 +4,7 @@
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile!
 // Write the constructor so that legs and fur have the right values for Cat and Bird
@@ -24,7 +24,7 @@ class Bird : public Animal{
 public:
     Bird() { // Bird constructor
         // Fix:  Please redefine here the class variables inherited from the Animal class
-        number_legs = ;
+        number_legs = 2;
     }
     int get_number_legs() {
         return this->number_legs;

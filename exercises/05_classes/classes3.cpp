@@ -1,11 +1,10 @@
-#include <iostream>
-#include <string>
+#include <cstdlib>
 
 // classes3.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile!
 // Write the Circle constructor
@@ -36,7 +35,7 @@ public:
 
 class Circle : public Shape {
 public:
-    Circle(const Point& centre = point_zero) { } // Fix: add a Call to parent constructor
+    Circle(const Point& centre = point_zero) { this->center_ = centre; } // Fix: add a Call to parent constructor
 
     Point center() const {
         return center_;

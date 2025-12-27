@@ -1,12 +1,11 @@
 #include <iostream>
-#include <string>
 #include <vector>
 
 // classes4.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile!
 // Write the Circle constructor
@@ -42,7 +41,7 @@ public:
 
 class Circle : public Shape {
 public:
-    Circle(const Point& centre = point_zero) : Shape(centre) { } 
+    Circle(const Point& centre = point_zero) : Shape(centre) { }
     virtual Point center() const {
         return Circle::center_;
     }
@@ -52,12 +51,12 @@ std::vector<Point> test_center() {
     const Shape shape;
     const Point point_in{ 1.0, 1.0 };
     const Circle circle(point_in);
-    std::vector<Shape*> shape_collection;
+    std::vector<const Shape*> shape_collection;
     shape_collection.push_back(&shape);
-    shape_collection.push_back(circle);  // Fix: Virtual calls work with references and addresses
+    shape_collection.push_back(&circle);  // Fix: Virtual calls work with references and addresses
 
-    std::vector<Point> center_collection{ shape_collection[0].center(), // Fix: Virtual calls work with references and addresses
-                                                shape_collection[1].center() };
+    std::vector<Point> center_collection{ shape_collection[0]->center(), // Fix: Virtual calls work with references and addresses
+                                                shape_collection[1]->center() };
     std::cout << "Value :" << center_collection[0] << "\n";
     std::cout << "Value :" << center_collection[1] << "\n";
     return center_collection;
