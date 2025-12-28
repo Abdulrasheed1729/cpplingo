@@ -1,23 +1,23 @@
 #include <iostream>
-#include <string>
+#include <unordered_set>
 
 // containers2.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on shape given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 // Step 1: Make me compile. Replace the array with the appropriate container.
 
 
 constexpr int num_inserts = 4;
-int my_sequence[num_inserts]; // Change this type to the appropriate STL
+std::unordered_set<int> my_sequence; // Change this type to the appropriate STL
 
 void test_containers2() {
 	std::cout << "There should be only one element of the same value (no duplicates) : \n";
 	for (size_t i = 0; i < num_inserts; i++)
 	{
-		my_sequence[i] = 42;
+		my_sequence.insert(42);
 	}
 }
 
