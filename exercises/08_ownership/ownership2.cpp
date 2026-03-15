@@ -1,6 +1,7 @@
 #include <iostream>
 #include <utility>
 #include <vector>
+#include <catch2/catch.hpp>
 
 // ownership2.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
@@ -49,7 +50,7 @@ std::pair<std::vector<int>, std::vector<int>> test_ownership2() {
     return { vec0, vec1 };
 }
 
-#include <catch2/catch.hpp>
+// #include <catch2/catch.hpp>
 
 TEST_CASE("test_ownership2") {
     std::cout << "\ntest_ownership2\n";
