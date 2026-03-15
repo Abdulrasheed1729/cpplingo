@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 #include <string>
 
@@ -9,7 +8,7 @@
 // even after you already figured it out.
 
 // Step 1: Make me compile. Make the class Repeater a template class.
-// function so that it could support generic inputs (vectors of both int and deque of double) 
+// function so that it could support generic inputs (vectors of both int and deque of double)
 // Use two generic types to accept both deque and vector.
 // Use the keyword auto for the generic T returned by the function max
 
@@ -33,6 +32,19 @@ template<> // // Value is true if specializing string
 struct is_string<std::string> : true_type {};
 
 // Please follow the same pattern for checking if type is vector and pointers
+
+template<typename T> // Value is false if is not specializing vector
+struct is_vector : false_type {};
+
+template<typename T> // // Value is true if specializing vector
+struct is_vector<std::vector<T>> : true_type {};
+
+
+template<typename T> // Value is false if is not specializing pointer
+struct is_pointer : false_type {};
+
+template<typename T> // // Value is true if specializing pointer
+struct is_pointer<T*> : true_type {};
 
 
 bool test_templates6_0() {

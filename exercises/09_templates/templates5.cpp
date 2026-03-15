@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 
 // templates5.cpp
@@ -8,24 +7,24 @@
 // even after you already figured it out.
 
 // Step 1: Make me compile. Make the class Repeater a template class.
-// function so that it could support generic inputs (vectors of both int and deque of double) 
+// function so that it could support generic inputs (vectors of both int and deque of double)
 // Use two generic types to accept both deque and vector.
 // Use the keyword auto for the generic T returned by the function max
 
 
 
-template<?, ?, ?>  // Fix: Fix me
+template<typename T, int INIT, size_t SIZE>  // Fix: Fix me
 class Repeater {
 private:
-    std::vector<?> v;
+    std::vector<T> v;
 public:
     Repeater() {
-        for (size_t i = 0; i < ?; i++)
+        for (size_t i = 0; i < SIZE; i++)
         {
-            v.push_back(?);
+            v.push_back(INIT);
         }
     };
-    const auto get() const { 
+    const auto get() const {
         return v;
     };
 };

@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <string>
 
 // templates7.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
@@ -9,7 +7,7 @@
 // even after you already figured it out.
 
 // Step 1: Make me compile. Make the class Repeater a template class.
-// function so that it could support generic inputs (vectors of both int and deque of double) 
+// function so that it could support generic inputs (vectors of both int and deque of double)
 // Use two generic types to accept both deque and vector.
 // Use the keyword auto for the generic T returned by the function max
 
@@ -29,12 +27,12 @@ struct is_pointer : false_type {};
 template<typename T> // Value is true if specializing pointer
 struct is_pointer<T*> : true_type {};
 
-// Use 'if constexpr (is_pointer<C>::value) { } else { } to output 
+// Use 'if constexpr (is_pointer<C>::value) { } else { } to output
 // the dereferenced pointer or the value if it's not a pointer
 template<typename C>
 void show(C data) {
     // TODO : Delete test and content of if condition
-    if constexpr ( ...? /* check if the type is a pointer */) {
+    if constexpr ( is_pointer<C>::value /* check if the type is a pointer */) {
         std::cout << *data << "\n";
     }
     else {

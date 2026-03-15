@@ -1,5 +1,3 @@
-#include <iostream>
-#include <sstream>
 #include <vector>
 #include <cassert>
 
@@ -10,13 +8,14 @@
 // even after you already figured it out.
 
 // Step 1: Make me compile. Make the function max as a template
-// function so that it could support generic inputs (vectors of both int and double) 
+// function so that it could support generic inputs (vectors of both int and double)
 // Use a template parameter for the generic T returned by the function max
 
-int max(const std::vector<int>& vec) {
+template<typename T>
+T max(const std::vector<T>& vec) {
     assert(!vec.empty());
 
-    int max_val = vec[0];
+    T max_val = vec[0];
     for (const auto& v : vec) {
         if (v > max_val) {
             max_val = v;
@@ -29,7 +28,7 @@ int max(const std::vector<int>& vec) {
 std::pair<int, double>  test_templates2() {
     std::vector<int> vec_i = {-4, 10, -2, 0, 3};
     std::vector<double> vec_d = {1.0e-1, 2.0, -4.0, 8.60};
-    
+
     const int max_i = max(vec_i);
     const double max_d = max(vec_d);
 

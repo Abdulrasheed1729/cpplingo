@@ -1,6 +1,4 @@
-#include <iostream>
-#include <tuple>
-#include <vector>
+#include <utility>
 
 // templates1.cpp
 // Make me compile! Go to the folder hint if you want a hint :)
@@ -12,7 +10,8 @@
 // function so that it could support generic inputs (both int and double).
 // Use a template parameter for the generic T returned by the function max.
 
-int max(int i0, int i1) {
+template<typename T>
+T max(T i0, T i1) {
     if (i0 > i1) {
         return i0;
     }
