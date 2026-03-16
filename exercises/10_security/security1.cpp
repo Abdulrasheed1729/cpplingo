@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstring>
 #include <string>
 #include <array>
 
@@ -6,7 +6,7 @@
 // Make me pass the test! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 
 struct Song {
@@ -18,7 +18,7 @@ class MediaPlayer {
     static constexpr size_t max_num_songs = 4;
     std::array<Song, max_num_songs> song_ar;
 public:
-    MediaPlayer() {} 
+    MediaPlayer() {}
     void set_song(std::string name, int index){
         song_ar[index] = Song(name);
     }
@@ -28,7 +28,9 @@ public:
 };
 
 const char * convert_to_C_style_string(MediaPlayer & p, int index){
-    return p.get_song_name(index).c_str();
+    static std::string r;
+    r = p.get_song_name(index);
+    return r.c_str();
 }
 
 #include <catch2/catch.hpp>
@@ -39,5 +41,5 @@ TEST_CASE("test_security1_0") {
     p.set_song("When the circus comes to town", 1);
     REQUIRE(p.get_song_name(0) == "Old MacDonald had a farm");
     const char * second_song = convert_to_C_style_string(p, 0);
-    REQUIRE(second_song == "Old MacDonald had a farm");
+    REQUIRE(strcmp(second_song, "Old MacDonald had a farm") == 0);
 }

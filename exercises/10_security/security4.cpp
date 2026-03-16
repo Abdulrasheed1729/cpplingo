@@ -1,14 +1,12 @@
 #include <iostream>
-#include <iomanip>
 #include <string>
-#include <array>
 #include <unordered_map>
 
 // security4.cpp
 // Make me pass the test! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 
 struct Song;
@@ -30,7 +28,7 @@ struct Song {
         name_ = std::move(song.name_);
         std::cout << "Assign-Move song "<< name_ <<"\n";
         return *this;
-    }   
+    }
     Song(const Song && song) : name_(std::move(song.name_)) {
         std::cout << "Move song "<< name_ <<"\n";
     }
@@ -46,7 +44,7 @@ struct Song {
         }
         catch(std::bad_alloc){
             std::cout<<"Program is probably running out of memory ..."<<"\n";
-        } 
+        }
         return s;
     }
     static void operator delete[](void * song_ptr) noexcept{
@@ -102,4 +100,3 @@ TEST_CASE("test_security4_1") {
     p.set_song("We are in an orchestra", -1);
     REQUIRE(p.get_song_name(1) == "When the circus comes to town");
 }
-

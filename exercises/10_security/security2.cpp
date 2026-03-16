@@ -1,13 +1,12 @@
 #include <iostream>
 #include <string>
 #include <array>
-#include <memory>
 
 // security2.cpp
 // Make me pass the test! Go to the folder hint if you want a hint :)
 
 // We sometimes encourage you to keep trying things on a given exercise,
-// even after you already figured it out. 
+// even after you already figured it out.
 
 
 struct Song {
@@ -19,7 +18,7 @@ class MediaPlayer {
     static constexpr size_t max_num_songs = 4;
     std::array<Song, max_num_songs> song_ar;
 public:
-    MediaPlayer() {} 
+    MediaPlayer() {}
     void set_song(std::string name, int index){
         song_ar[index] = Song(name);
     }
@@ -28,16 +27,16 @@ public:
     }
 };
 
-const std::string convert_title_to_upper_case(std::shared_ptr<MediaPlayer> p, int index){
-    auto songname = p->get_song_name(index);
+const std::string convert_title_to_upper_case(MediaPlayer& p, int index){
+    auto songname = p.get_song_name(index);
     for(auto & c : songname){
         c = std::toupper(c);
     }
     return songname;
 }
 
-const std::string convert_title_to_lower_case(std::shared_ptr<MediaPlayer> p, int index){
-    auto songname = p->get_song_name(index);
+const std::string convert_title_to_lower_case(MediaPlayer& p, int index){
+    auto songname = p.get_song_name(index);
     for(auto & c : songname){
         c = std::tolower(c);
     }
@@ -45,12 +44,12 @@ const std::string convert_title_to_lower_case(std::shared_ptr<MediaPlayer> p, in
 }
 
 void make_upper_0_lower_1(MediaPlayer &p){
-    auto shared0 = std::shared_ptr<MediaPlayer>(&p);
+    auto shared0 = MediaPlayer();
     std::string s0_upper = convert_title_to_upper_case(shared0, 0);
     std::cout << s0_upper << "\n";
 
-    auto shared1 = std::shared_ptr<MediaPlayer>(&p);
-    std::string s1_lower = convert_title_to_lower_case(shared1, 1);
+    // auto shared1 = std::shared_ptr<MediaPlayer>(&p);
+    std::string s1_lower = convert_title_to_lower_case(shared0, 1);
     std::cout << s1_lower << "\n";
 }
 
